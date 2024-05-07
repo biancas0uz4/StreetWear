@@ -1,0 +1,93 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    background-image: url(../assets/Desktop\ -\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.containerInteiro {
+    background-color: #C1AAAA;
+    height: 480px;
+    width: 660px;
+    border-radius: 18px;
+    border: 5px solid #4682b4;
+    margin: 5% auto 5% auto;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.container .titulo {
+    font-size: 30px;
+    font-family: "Brawler", serif;
+    font-weight: 850;
+    font-style: normal;
+    margin-top: 52.5px;
+}
+
+.titulo{
+    margin-top: 20px;
+}
+
+.brawler-regular {
+    font-family: "Brawler", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.inputs {
+    border-radius: 10px;
+    border: none;
+    text-align: center;
+    height: 40px;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.botao {
+    border-radius: 15px;
+    height: 40px;
+    width: 150px;
+    border: none;
+    background-color: #4682b4;
+    color: white;
+    font-size: 22px;
+    font-family: "Brawler", serif;
+    font-weight: 800;
+    font-style: normal;
+    box-shadow: 4px 5px 0px #033158;
+
+}
+
+.container p {
+    font-size: 15px;
+    font-family: "Brawler", serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
+.container a {
+    text-decoration: none;
+    color: #4682b4;
+}
+
+.back {
+    width: 30px;
+    position: relative;
+    right: 150px;
+    bottom: 55px
+}
+
+.botao a{
+    text-decoration: none;
+    color: white;
+}
