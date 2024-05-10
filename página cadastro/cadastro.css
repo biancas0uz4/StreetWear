@@ -83,8 +83,8 @@ body {
 .back {
     width: 30px;
     position: relative;
-    right: 150px;
-    bottom: 55px
+    top: 5%;
+    left: 3%;
 }
 
 .botao a{
