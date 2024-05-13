@@ -10,8 +10,7 @@
 
 <body>
     <div class="containerInteiro">
-        <a href="./pagInicio.html" class="back"><img src="./assets/angle-left.png" width="30px"
-                height="30px"></a>
+        <a href="./pagInicio.html" class="back"><img src="./assets/angle-left.png" width="30px" height="30px"></a>
         <div class="container">
 
             <h2 class="titulo">Cadastro</h2>
@@ -35,6 +34,12 @@
             </span>
             <br>
             <button onclick="cadastro()" class="botao"><a href="./login2.html">Cadastre-se</a></button>
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/circle-loading.gif" id="loading-gif" />
+            </div>
+
+            <div id="div_erros_login"></div>
         </div>
     </div>
 </body>
