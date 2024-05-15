@@ -1,46 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-    
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>StreetWear</title>
-        <link rel="stylesheet" href="./css/inicio.css">
-        <script src="https://unpkg.com/scrollreveal"></script>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreetWear</title>
+    <link rel="stylesheet" href="./css/inicio.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
+    <section id="Inicio">
+        <div class="header">
+            <div class="containerTit">
+                <a href="#Inicio">
+                    <h1 class="titulo">Street</h1>
+                    <div>
+                        <h2 class="titulo2">Wear</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="container">
+                <ul class="navbar">
+                    <a href="#Sobre" onclick="scrollToSection('Sobre')">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="#Tendencias">
+                        <li>Tendências</li>
+                    </a>
+                    <li>Guia</li>
 
-    <div class="header">
-        <div class="containerTit">
-            <h1 class="titulo">Street</h1>
-            <div>
-                <h2 class="titulo2">Wear</h2>
+                    <div class="divLC">
+                        <a href="login2.html">
+                            <li>Login</li>
+                        </a>
+                        <li>|</li>
+                        <a href="./cadastro2.html">
+                            <li>Cadastro</li>
+                        </a>
+                    </div>
+                </ul>
             </div>
         </div>
-        <div class="container">
-            <ul class="navbar">
-                <a href="#Sobre">
-                    <li>Sobre</li>
-                </a>
-                <a href="#Tendencias">
-                    <li>Tendências</li>
-                </a>
-                <li>Guia</li>
-
-                <div class="divLC">
-                    <a href="login2.html">
-                        <li>Login</li>
-                    </a>
-                    <li>|</li>
-                    <a href="./cadastro2.html">
-                        <li>Cadastro</li>
-                    </a>
-                </div>
-            </ul>
-        </div>
-    </div>
-
+    </section>
     <!-- banner -->
 
     <div class="banner">
@@ -71,7 +73,7 @@
         </div>
     </section>
     <hr class="divisoriaTendencias">
-    
+
     <section id="Tendencias">
         <div class="trend">
             <div class="card">
@@ -84,11 +86,11 @@
             </div>
             <div class="card">
                 <img src="./assets/image 3 pag inicial - Copia.png">
-                <span  style="right: -40px; bottom: 80px;">Calças</span>
+                <span style="right: -40px; bottom: 80px;">Calças</span>
             </div>
             <div class="card2">
                 <img src="./assets/image 1 pag inicial - Copia.png">
-                <span  style="right: -68px; top: 140px;">Calçados</span>
+                <span style="right: -68px; top: 140px;">Calçados</span>
             </div>
             <div class="card">
                 <img src="./assets/download (2).jpg">
@@ -120,30 +122,36 @@
         duration: 1000,
         opacity: 0,
         distance: '100px',
-        origin: 'top',
+        origin: 'left',
         interval: 200
     })
     ScrollReveal().reveal('.conteudo', {
         duration: 1000,
         opacity: 0,
         distance: '100px',
-        origin: 'top',
+        origin: 'right',
         interval: 200
     })
     ScrollReveal().reveal('.card', {
         duration: 1000,
         opacity: 0,
         distance: '100px',
-        origin: 'left',
+        origin: 'top',
         interval: 200
     })
     ScrollReveal().reveal('.card2', {
         duration: 1000,
         opacity: 0,
         distance: '100px',
-        origin: 'left',
+        origin: 'bottom',
         interval: 200
     })
-    
+
+    function scrollToSection(sectionId) {
+        // aqui eu estou criando uma variavel onde ela vai ficar responsável por indentificar no HTML o section que eu quero
+        var section = document.getElementById(sectionId);
+        // aqui eu estou pedindo que para após encontrar que ele vá até ele de forma suave
+        section.scrollIntoView();
+    };
 
 </script>

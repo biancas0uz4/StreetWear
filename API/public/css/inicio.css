@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     background-color: black;
+    overflow-x: hidden;
 }
 
 .titulo {
@@ -34,14 +35,20 @@ body {
     src: url(../Brawler/Brawler-Regular.ttf./.navbar);
 }
 
+* {
+    scroll-behavior: smooth;
+}
+
 .navbar {
     width: 300px;
     color: white;
     list-style: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: larger;
+    gap: 5vh;
+   
 }
 
 .navbar li {
@@ -108,7 +115,8 @@ body {
 
 .divLC {
     display: flex;
-    margin-left: 85%;
+    gap: 2vh;
+    margin-left: 55%;
 }
 
 .sobre {
@@ -204,7 +212,7 @@ body {
     height: 600px;
 }
 
-.card2{
+.card2 {
     width: 250px;
     height: 500px;
     position: relative;
@@ -236,4 +244,3 @@ body {
     margin: 0;
     background-color: #044783;
 }
-
