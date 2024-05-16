@@ -3,6 +3,7 @@ body {
     padding: 0;
     background-color: black;
     overflow-x: hidden;
+
 }
 
 .titulo {
@@ -13,7 +14,6 @@ body {
     margin: 0;
     position: absolute;
     left: 18%;
-
 }
 
 .titulo2 {
@@ -23,6 +23,7 @@ body {
     justify-content: center;
     margin-top: 48px;
     margin-left: 125px;
+
 }
 
 @font-face {
@@ -48,7 +49,8 @@ body {
     align-items: center;
     font-size: larger;
     gap: 5vh;
-   
+    
+    
 }
 
 .navbar li {
@@ -57,7 +59,13 @@ body {
 
 .header {
     border-bottom: 3px solid #4682b4;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    z-index: 3;
 }
+
 
 .container {
     width: 80px;
@@ -85,7 +93,7 @@ body {
 
 .banner {
     background-image: url(../assets/openart-c72147f6cbbf4c2bad6717ff07a46e6f.png);
-    height: 550px;
+    height: 650px;
     color: #d9d9d9;
     background-size: cover;
 }
@@ -160,7 +168,7 @@ body {
 }
 
 .trend {
-    background-color: #DEDAD5;
+    background-color: #05051fd0;
     padding-top: 50px;
     padding-bottom: 99px;
     display: flex;
@@ -238,9 +246,6 @@ body {
     font-weight: 800;
 }
 
-.divisoriaTendencias {
-    height: 2px;
-    border-style: none;
-    margin: 0;
-    background-color: #044783;
+.containerTit a {
+    text-decoration: none;
 }
