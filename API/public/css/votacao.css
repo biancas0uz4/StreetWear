@@ -1,38 +1,143 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    background-color: black;
+    background-color: #05051fd0;
     overflow-x: hidden;
+}
+
+.titulo {
     color: white;
-}
-
-.container{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
-    
-}
-
-.conteudo{
-    height: 500px;
-    width: 400px;
-    border: 2px solid black;
-    display: flex;
-    object-fit: cover;
+    font-weight: 700;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
     position: absolute;
-    flex-direction: row;
+    left: 18%;
+}
+
+.titulo2 {
+    color: white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    margin-left: 125px;
+
+}
+
+@font-face {
+    font-family: face;
+    src: url(../Britannic\ Bold\ Regular/.titulo/.titulo2/.banner);
+}
+
+@font-face {
+    font-family: face;
+    src: url(../Brawler/Brawler-Regular.ttf./.navbar);
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    width: 300px;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    gap: 5vh;
+
+
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.header {
+    border-bottom: 3px solid #4682b4;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    z-index: 3;
+}
+
+
+.container {
+    width: 80px;
+    margin: auto;
+    display: flex;
+}
+
+.containerTit {
+    position: relative;
+    background-color: #4682b4;
+    color: white;
+    display: flex;
+    height: fit-content;
+    width: 200px;
+    align-items: start;
+    margin-left: 50px;
+    margin-bottom: -80px;
+
+}
+
+.header .container {
+    justify-content: space-evenly;
+
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #4682b4;
+}
+
+.divLC {
+    display: flex;
+    gap: 2vh;
+    margin-left: 55%;
+}
+.containerTit a {
+    text-decoration: none;
+}
+
+.container2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+}
+
+.conteudo {}
+
+.conteudo h1 {
+    color: white;
+    display: flex;
+    right: 50px;
+
 }
 
 .imagens {
     display: flex;
+    height: 500px;
+    width: 400px;
+    flex-direction: row;
+    object-fit: cover;
+    position: absolute;
 
 }
 
-.imagens .card img{
-    width: 250px;
-    height: 300px;
-    
+.imagens .card img {
+    width: 200px;
+    height: 250px;
+    margin-right: 20px;
+    justify-content: center;
+    border: 2px solid black;
+    border-radius: 10px;
 }
