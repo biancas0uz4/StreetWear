@@ -28,9 +28,9 @@
             </span>
             <br>
             <span>
-                <input type="text" id="input_senha" placeholder="Senha" class="inputs">
+                <input type="password" id="input_senha" placeholder="Senha" class="inputs">
 
-                <input type="text" id="input_confirma" placeholder="Confirma Senha" class="inputs">
+                <input type="password" id="input_confirma" placeholder="Confirma Senha" class="inputs">
             </span>
             <br>
             <button onclick="cadastro()" class="botao"><a href="./login2.html">Cadastre-se</a></button>
@@ -45,3 +45,151 @@
 </body>
 
 </html>
+
+<script>
+    function cadastrar() {
+    aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var nomeVar = nome_input.value;
+    var emailVar = email_input.value;
+    var senhaVar = senha_input.value;
+    var confirmacaoSenhaVar = confirmacao_senha_input.value;
+    var telefoneVar = telefone_input.value;
+
+    if (nomeVar.length < 1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Nome com pelo menos 1 caracter)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    if (emailVar.indexOf("@") == '-1' && emailVar.indexOf(".")) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(E-mail deve conter '@' e '.')";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    if (senhaVar <= 6) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha deve conter mais de 6 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+    if (confirmacaoSenhaVar == senhaVar) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha deve conter mais de 6 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    if (telefone.length != 12){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Telefone deve conter 12 caracteres)";
+
+      finalizarAguardar();
+      return false;
+    }else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+      if (
+        nomeVar == "" ||
+        emailVar == "" ||
+        senhaVar == "" ||
+        confirmacaoSenhaVar == "" ||
+        Var == "" ||
+        telefoneVar == ""
+      ) {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML =
+          "(Mensagem de erro para todos os campos em branco)";
+
+        finalizarAguardar();
+        return false;
+      } else {
+        setInterval(sumirMensagem, 5000);
+      }
+
+    // Enviando o valor da nova input
+    fetch("/usuarios/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        nomeServer: nomeVar,
+        emailServer: emailVar,
+        senhaServer: senhaVar,
+        Server: Var,
+        telefoneServer: telefoneVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+          setTimeout(() => {
+            window.location = "login2.html";
+          }, "2000");
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+//   function listar() {
+//     fetch("/s/listar", {
+//       method: "GET",
+//     })
+//       .then(function (resposta) {
+//         resposta.json().then((s) => {
+//           s.forEach(() => {
+//             listas.innerHTML += `<option value='${.id}'>${.cnpj}</option>`;
+//           });
+//         });
+//       })
+//       .catch(function (resposta) {
+//         console.log(`#ERRO: ${resposta}`);
+//       });
+//  }
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>
