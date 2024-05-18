@@ -108,10 +108,15 @@ body {
 }
 
 .container2 {
+    height: 70vh;
+    width: 90vw;
+    margin-top: 25vh;
+    margin-left: 10vh;
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
+    border: 2px solid black;
+    
     align-items: center;
-
 }
 
 /* .conteudo {} */
@@ -119,9 +124,10 @@ body {
 .conteudo h1 {
     color: white;
     display: flex;
-    right: 50px;
+    margin: 0;
 
 }
+
 
 .imagens {
     display: flex;
@@ -129,7 +135,8 @@ body {
     width: 400px;
     flex-direction: row;
     object-fit: cover;
-    position: absolute;
+  align-items: center;
+    justify-content: center;
 
 }
 

@@ -9,8 +9,14 @@
 </head>
 
 <body>
+    
+        <div class="alerta_erro">
+          <div class="card_erro" id="cardErro">
+            <span id="mensagem_erro"></span>
+          </div>
+    
     <div class="containerInteiro">
-        <a href="./pagInicio.html" class="back"><img src="./assets/angle-left.png" width="30px" height="30px"></a>
+        <a href="./index.html" class="back"><img src="./assets/angle-left.png" width="30px" height="30px"></a>
         <div class="container">
 
             <h2 class="titulo">Cadastro</h2>
@@ -33,10 +39,10 @@
                 <input type="password" id="input_confirma" placeholder="Confirma Senha" class="inputs">
             </span>
             <br>
-            <button onclick="cadastro()" class="botao"><a href="./login2.html">Cadastre-se</a></button>
+            <button onclick="cadastrar()" class="botao">Cadastre-se</button>
 
             <div id="div_aguardar" class="loading-div">
-                <img src="./assets/circle-loading.gif" id="loading-gif" />
+                <img src="./assets/circle-loading.gif" height="30em" id="loading-gif" />
             </div>
 
             <div id="div_erros_login"></div>
@@ -48,22 +54,23 @@
 
 <script>
     function cadastrar() {
-    aguardar();
+    //aguardar();
 
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
-    var nomeVar = nome_input.value;
-    var emailVar = email_input.value;
-    var senhaVar = senha_input.value;
-    var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var telefoneVar = telefone_input.value;
+    var nomeVar = input_nome.value;
+    var sobrenomeVar = input_sobrenome.value;
+    var emailVar = input_email.value;
+    var senhaVar = input_senha.value;
+    var confirmacaoSenhaVar = input_confirma.value;
+    var telefoneVar = Number(input_tel.value);
 
     if (nomeVar.length < 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Nome com pelo menos 1 caracter)";
 
-      finalizarAguardar();
+      //finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -74,7 +81,7 @@
       mensagem_erro.innerHTML =
         "(E-mail deve conter '@' e '.')";
 
-      finalizarAguardar();
+      //finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
@@ -85,28 +92,28 @@
       mensagem_erro.innerHTML =
         "(Senha deve conter mais de 6 caracteres)";
 
-      finalizarAguardar();
+      //finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
-    if (confirmacaoSenhaVar == senhaVar) {
+    if (confirmacaoSenhaVar != senhaVar) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Senha deve conter mais de 6 caracteres)";
 
-      finalizarAguardar();
+      //finalizarAguardar();
       return false;
     } else {
       setInterval(sumirMensagem, 5000);
     }
 
-    if (telefone.length != 12){
+    if (telefoneVar.length >= 12){
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Telefone deve conter 12 caracteres)";
 
-      finalizarAguardar();
+      //finalizarAguardar();
       return false;
     }else {
       setInterval(sumirMensagem, 5000);
@@ -117,14 +124,13 @@
         emailVar == "" ||
         senhaVar == "" ||
         confirmacaoSenhaVar == "" ||
-        Var == "" ||
         telefoneVar == ""
       ) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
           "(Mensagem de erro para todos os campos em branco)";
 
-        finalizarAguardar();
+       // finalizarAguardar();
         return false;
       } else {
         setInterval(sumirMensagem, 5000);
@@ -140,10 +146,10 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        sobrenomeServer: sobrenomeVar,
+        telefoneServer: telefoneVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        Server: Var,
-        telefoneServer: telefoneVar
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -160,27 +166,29 @@
           }, "2000");
 
           limparFormulario();
-          finalizarAguardar();
+         // finalizarAguardar();
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        finalizarAguardar();
+       // finalizarAguardar();
       });
+
+      
 
     return false;
   }
 
 //   function listar() {
-//     fetch("/s/listar", {
+//     fetch("/usuarios/listar", {
 //       method: "GET",
 //     })
 //       .then(function (resposta) {
 //         resposta.json().then((s) => {
 //           s.forEach(() => {
-//             listas.innerHTML += `<option value='${.id}'>${.cnpj}</option>`;
+//             listas.innerHTML += `<option value='${usuario.idUser}'>${usuario.nome}</option>`;
 //           });
 //         });
 //       })

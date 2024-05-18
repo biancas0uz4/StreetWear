@@ -3,80 +3,155 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>AquaTech | Página Inicial</title>
-
-    <script src="./js/sessao.js"></script>
-
-    <link rel="stylesheet" href="./css/estilo.css">
-    <link rel="icon" href="./assets/icon/favicon2.ico">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <title>StreetWear</title>
+    <link rel="stylesheet" href="./css/inicio.css">
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 
 <body>
-    <div class="header">
-      <div class="container">
-        <h1 class="titulo">AquaTech</h1>
-        <ul class="navbar">
-          <li class="agora">
-            <a href="#">Inicial</a>
-          </li>
-          <li>
-            <a href="simulador.html">Simulador</a>
-          </li>
-          <li>|</li>
-          <li>
-            <a href="login.html">Login</a>
-          </li>
-          <li>
-            <a href="cadastro.html">Cadastro</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  
-    <div class="banner">
-      <div class="container">
-        <p>Preservando <span>hoje</span> para existirem <span>amanhã</span>.</p>
-      </div>
-    </div>
-  
-    <div class="social">
-      <div class="container">
-        <div class="boxes">
-          <div class="box">
-            <img src="assets/imgs/planet-earth_color.png">
-            <h4>Missão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/lightbulb_color.png">
-            <h4>Visão</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
-          <div class="box">
-            <img src="assets/imgs/growth_color.png">
-            <h4>Valores</h4>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et, quas cupiditate asperiores provident magnam
-              vitae illum iusto fugiat atque deleniti nulla sed iure suscipit, laborum, aliquid accusantium cum dicta
-              minima.</p>
-          </div>
+    <section id="Inicio">
+        <div class="header">
+            <div class="containerTit">
+                <a href="#Inicio">
+                    <h1 class="titulo">Street</h1>
+                    <div>
+                        <h2 class="titulo2">Wear</h2>
+                    </div>
+                </a>
+            </div>
+            <div class="container">
+                <ul class="navbar">
+                    <a href="#Sobre" onclick="scrollToSection('Sobre')">
+                        <li>Sobre</li>
+                    </a>
+                    <a href="#Tendencias">
+                        <li>Tendências</li>
+                    </a>
+                    <li>Guia</li>
+
+                    <div class="divLC">
+                        <a href="login2.html">
+                            <li>Login</li>
+                        </a>
+                        <li>|</li>
+                        <a href="./cadastro2.html">
+                            <li>Cadastro</li>
+                        </a>
+                    </div>
+                </ul>
+            </div>
         </div>
-      </div>
+    </section>
+    <!-- banner -->
+
+    <div class="banner">
+        <div class="container">
+            <p>StreetWear</p>
+        </div>
     </div>
-  
-    <div class="footer">
-      <div class="container">
-        <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
-        <span class="version">v1.0.0</span>
-      </div>
-    </div>
-  </body>
+
+    <section id="Sobre">
+        <div class="sobre">
+            <div class="titulo2">
+                <h1>Ascensão do StreetWear</h1>
+            </div>
+            <div class="conteudo">
+
+
+                <p>Streetwear é um estilo de moda que surgiu em comunidades urbanas, especialmente entre a cultura
+                    jovem, e
+                    desde então ganhou popularidade mainstream. É caracterizado por sua estética casual, confortável e
+                    frequentemente esportiva, inspirada no skate, na cultura hip-hop, no punk e em várias outras
+                    subculturas. Elementos-chave do streetwear incluem camisetas com estampas gráficas, moletons, tênis,
+                    bonés de beisebol e acessórios como mochilas e toucas. Marcas associadas ao streetwear muitas vezes
+                    priorizam lançamentos limitados, colaborações e exclusividade, contribuindo para seu prestígio
+                    cultural.
+                    O streetwear transcendeu suas raízes subculturais para se tornar uma força significativa na moda
+                    contemporânea, influenciando designers de alta costura e moldando tendências em todo o mundo.</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="Tendencias">
+        <div class="trend">
+            <div class="card">
+                <img src="./assets/dani수민 (@danisoomin) • Fotos e vídeos do Instagram.jpg">
+                <span>Moletons</span>
+            </div>
+            <div class="card2 ">
+                <img src="./assets/image 2 pag inicial - Copia.png">
+                <span style="right: -40px; top: 140px;">Blusas</span>
+            </div>
+            <div class="card">
+                <img src="./assets/image 3 pag inicial - Copia.png">
+                <span style="right: -40px; bottom: 80px;">Calças</span>
+            </div>
+            <div class="card2">
+                <img src="./assets/image 1 pag inicial - Copia.png">
+                <span style="right: -68px; top: 140px;">Calçados</span>
+            </div>
+            <div class="card">
+                <img src="./assets/download (2).jpg">
+                <span style="right: -85px; bottom: 98px;">Acessórios</span>
+            </div>
+
+        </div>
+    </section>
+</body>
 
 </html>
+<script>
+
+    ScrollReveal().reveal('.containerTit', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'top',
+        interval: 200
+    })
+    ScrollReveal().reveal('.container', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'top',
+        interval: 200
+    })
+    ScrollReveal().reveal('.titulo2', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'left',
+        interval: 200
+    })
+    ScrollReveal().reveal('.conteudo', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'right',
+        interval: 200
+    })
+    ScrollReveal().reveal('.card', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'top',
+        interval: 200
+    })
+    ScrollReveal().reveal('.card2', {
+        duration: 1000,
+        opacity: 0,
+        distance: '100px',
+        origin: 'bottom',
+        interval: 200
+    })
+
+    function scrollToSection(sectionId) {
+        // aqui eu estou criando uma variavel onde ela vai ficar responsável por indentificar no HTML o section que eu quero
+        var section = document.getElementById(sectionId);
+        // aqui eu estou pedindo que para após encontrar que ele vá até ele de forma suave
+        section.scrollIntoView();
+    };
+
+</script>
