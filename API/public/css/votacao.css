@@ -115,7 +115,7 @@ body {
     display: flex;
     justify-content: center;
     border: 2px solid black;
-    
+    background-color: #4682b4;
     align-items: center;
 }
 
