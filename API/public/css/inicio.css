@@ -3,7 +3,7 @@ body {
     padding: 0;
     background-color: black;
     overflow-x: hidden;
-
+    cursor: pointer;
 }
 
 .titulo {
