@@ -65,59 +65,6 @@
     var confirmacaoSenhaVar = input_confirma.value;
     var telefoneVar = Number(input_tel.value);
 
-    if (nomeVar.length < 1) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Nome com pelo menos 1 caracter)";
-
-      //finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-
-    if (emailVar.indexOf("@") == '-1' && emailVar.indexOf(".")) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(E-mail deve conter '@' e '.')";
-
-      //finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-
-    if (senhaVar <= 6) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Senha deve conter mais de 6 caracteres)";
-
-      //finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-    if (confirmacaoSenhaVar != senhaVar) {
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Senha deve conter mais de 6 caracteres)";
-
-      //finalizarAguardar();
-      return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
-    }
-
-    if (telefoneVar.length >= 12){
-      cardErro.style.display = "block";
-      mensagem_erro.innerHTML =
-        "(Telefone deve conter 12 caracteres)";
-
-      //finalizarAguardar();
-      return false;
-    }else {
-      setInterval(sumirMensagem, 5000);
-    }
 
       if (
         nomeVar == "" ||
@@ -128,13 +75,50 @@
       ) {
         cardErro.style.display = "block";
         mensagem_erro.innerHTML =
-          "(Mensagem de erro para todos os campos em branco)";
+          "(Preencha todos os campos em branco)";
 
        // finalizarAguardar();
         return false;
-      } else {
-        setInterval(sumirMensagem, 5000);
-      }
+      } else if (nomeVar.length < 1) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Nome com pelo menos 1 caracter)";
+
+      //finalizarAguardar();
+      return false;
+    } else if (emailVar.indexOf("@") == '-1' && emailVar.indexOf(".")) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(E-mail deve conter '@' e '.')";
+
+      //finalizarAguardar();
+      return false;
+
+    }else if (senhaVar <= 6) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha deve conter mais de 6 caracteres)";
+
+      //finalizarAguardar();
+      return false;
+   
+    }else if (confirmacaoSenhaVar != senhaVar) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Senha deve conter mais de 6 caracteres)";
+
+      //finalizarAguardar();
+      return false;
+    } else if (telefoneVar.length >= 12){
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Telefone deve conter 12 caracteres)";
+
+      //finalizarAguardar();
+      return false;
+    }else {
+      setInterval(sumirMensagem, 5000);
+    }
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {

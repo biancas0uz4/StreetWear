@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Votação</title>
     <link rel="stylesheet" href="./css/votacao.css">
+    <script src="../public/js/alerta.js"></script>
+    <script src="../public/js/sessao.js"></script>
 </head>
 
 <body>
@@ -21,7 +23,10 @@
             </div>
             <div class="container">
                 <ul class="navbar">
-                    <a href="#Sobre">
+                    <a href="./index.html">
+                        <li>Home</li>
+                    </a>
+                    <a href="#votacao">
                         <li>Votação</li>
                     </a>
                     <a href="#Tendencias">
@@ -30,48 +35,109 @@
                     <!-- <li>Guia</li> -->
 
                     <div class="divLC">
-                        <a href="login2.html">
-                            <li>Login</li>
-                        </a>
-                        <li>|</li>
-                        <a href="./cadastro2.html">
-                            <li>Cadastro</li>
-                        </a>
+                        Olá<span id="b_usuario">usuário</span>!
                     </div>
                 </ul>
             </div>
         </div>
     </section>
-    <div class="container2">
-        <div class="conteudo">
-            <h1>Escolha seu conjunto favorito</h1>
-               
-            
-            <div class="imagens">
-        
-                <div class="card">
-                    <img src="./assets/conjunto1.jpg">
-                    <span><b>Conjunto 1</b></span>
+
+    <section id="votacao">
+        <div class="container2">
+            <div class="conteudo">
+                <h1>Escolha seu conjunto favorito</h1>
+
+
+                <div class="imagens">
+
+                    <div class="card">
+                        <img onclick="conjunto1()" id="img1" src="./assets/conjunto1.jpg">
+                        <span><b>Conjunto 1</b></span>
+                    </div>
+                    <div class="card">
+                        <img onclick="conjunto2()" id="img2" src="./assets/conjunto2.jpg">
+                        <span><b>Conjunto 2</b></span>
+                    </div>
+                    <div class="card">
+                        <img onclick="conjunto3()" id="img3" src="./assets/conjunto3.jpg">
+                        <span><b>Conjunto 3</b></span>
+                    </div>
+                    <div class="card">
+                        <img onclick="conjunto4()" id="img4" src="./assets/conjunto4.jpg">
+                        <span><b>Conjunto 4</b></span>
+                    </div>
+                    <div class="card">
+                        <img onclick="conjunto5()" id="img5" src="./assets/conjunto5.jpg">
+                        <span><b>Conjunto 5</b></span>
+                    </div>
+                    <div class="botao">
+                        <button id="btnVotar" style="display: none;">Votar</button>
+                    </div>
                 </div>
-                <div class="card">
-                    <img src="./assets/conjunto2.jpg">
-                    <span><b>Conjunto 2</b></span>
-                </div>
-                <div class="card">
-                    <img src="./assets/conjunto3.jpg">
-                    <span><b>Conjunto 3</b></span>
-                </div>
-                <div class="card">
-                    <img src="./assets/conjunto4.jpg">
-                    <span><b>Conjunto 4</b></span>
-                </div>
-                <div class="card">
-                    <img src="./assets/conjunto5.jpg">
-                    <span><b>Conjunto 5</b></span>
-                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 </body>
 
 </html>
+<script>
+    b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+
+    var conjuntoEscolhido = "";
+
+    function conjunto1() {
+        btnVotar.style.display = 'block'
+        img1.style.width = '210px'
+        img1.style.height = '260px'
+        img1.style.border = '5px solid black'
+        conjuntoEscolhido = 1
+    }
+    function conjunto2() {
+        btnVotar.style.display = 'block'
+        img1.style.width = '210px'
+        img1.style.height = '260px'
+        img1.style.border = '5px solid black'
+        conjuntoEscolhido = 2
+    }
+    function conjunto3() {
+        btnVotar.style.display = 'block'
+        img1.style.width = '210px'
+        img1.style.height = '260px'
+        img1.style.border = '5px solid black'
+        conjuntoEscolhido = 3
+    }
+    function conjunto4() {
+        btnVotar.style.display = 'block'
+        img1.style.width = '210px'
+        img1.style.height = '260px'
+        img1.style.border = '5px solid black'
+        conjuntoEscolhido = 4
+    }
+    function conjunto5() {
+        btnVotar.style.display = 'block'
+        img1.style.width = '210px'
+        img1.style.height = '260px'
+        img1.style.border = '5px solid black'
+        conjuntoEscolhido = 5
+    }
+
+    function cadastrar() {
+
+        var idUsuarioVar = sessionStorage.ID_USUARIO;
+
+    // Enviando o valor da nova input
+    fetch("/roupas/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        idUsuarioServer: idUsuarioVar,
+        votoServer: conjuntoEscolhido,
+      }),
+    })
+
+    return false;
+  }
+</script>
