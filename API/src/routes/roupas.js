@@ -1,9 +1,11 @@
 var express = require("express");
 var router = express.Router();
 
-var roupaController = require("../controllers/roupaController");
+var roupasController = require("../controllers/roupasController");
 
-//Recebendo os dados do html e direcionando para a função cadastrar de roupaController.js
-router.post("/cadastrar", function (req, res) {
-    roupaController.cadastrar(req, res);
+
+router.post("/cadastrarRoupa", function (req, res) {
+    roupasController.cadastrarRoupa(req, res);
 })
+
+module.exports = router;
