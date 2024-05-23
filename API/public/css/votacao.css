@@ -150,3 +150,19 @@ body {
     border: 2px solid black;
     border-radius: 10px;
 }
+
+.botao{
+    border-radius: 15px;
+    height: 40px;
+    width: 120px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 22px;
+    font-family: "Brawler", serif;
+    font-weight: 800;
+    font-style: normal;
+    box-shadow: 4px 5px 0px #033158;
+    display: flex;
+
+}

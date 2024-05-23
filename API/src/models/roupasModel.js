@@ -8,7 +8,7 @@ function votacao(idUsuarioVar, conjuntoEscolhido) {
         INSERT INTO votacao (fkUser, fkRoupa) VALUE (${idUsuarioVar}, ${conjuntoEscolhido});
     `;
     console.log("Executando a instrução SQL: \n" + instrucao2);
-    return database.executar(instrucao2);
+    return database.executar(instrucao2);   
 }
 
 
