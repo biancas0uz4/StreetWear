@@ -46,36 +46,76 @@
         <div class="container2">
             <div class="conteudo">
                 <h1>Escolha seu conjunto favorito</h1>
-
-
-                <div class="imagens">
-
-                    <div class="card">
-                        <img onclick="selecionarconjunto('conjunto1')" id="img1" src="./assets/conjunto1.jpg">
-                        <span><b>Conjunto 1</b></span>
-                    </div>
-                    <div class="card">
-                        <img onclick="selecionarconjunto('conjunto2')" id="img2" src="./assets/conjunto2.jpg">
-                        <span><b>Conjunto 2</b></span>
-                    </div>
-                    <div class="card">
-                        <img onclick="selecionarconjunto('conjunto3')" id="img3" src="./assets/conjunto3.jpg">
-                        <span><b>Conjunto 3</b></span>
-                    </div>
-                    <div class="card">
-                        <img onclick="selecionarconjunto('conjunto4')" id="img4" src="./assets/conjunto4.jpg">
-                        <span><b>Conjunto 4</b></span>
-                    </div>
-                    <div class="card">
-                        <img onclick="selecionarconjunto('conjunto5')" id="img5" src="./assets/conjunto5.jpg">
-                        <span><b>Conjunto 5</b></span>
-                    </div>
-                   
-                        <button class="botao" id="btnVotar" onclick="cadastrarRoupa()" style="display: none;">Votar</button>
-                 
+                <div class="nav-boato">
+                    <button onclick="feminino()" id="FemBtn" class="btn white-btn">Feminino</button>
+                    <button onclick="masculino()" id="MascBtn" class="btn">Maculino</button>
                 </div>
 
+                <ul class="slider">
+
+                    <div class="imagens">
+                        <!-- <div class="slider-navigation">
+                            <div class="nav-btn"></div>
+                            <div class="nav-btn"></div>
+                        </div> -->
+                        <li id="femininos">
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto1')" id="img1" src="./assets/conjunto1.jpg">
+                                <span><b>Conjunto 1</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto2')" id="img2" src="./assets/conjunto2.jpg">
+                                <span><b>Conjunto 2</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto3')" id="img3" src="./assets/conjunto3.jpg">
+                                <span><b>Conjunto 3</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto4')" id="img4" src="./assets/conjunto4.jpg">
+                                <span><b>Conjunto 4</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto5')" id="img5" src="./assets/conjunto5.jpg">
+                                <span><b>Conjunto 5</b></span>
+                            </div>
+                        </li>
+                        <li id="masculinos" style="display: none;">
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto1')" id="img1M" src="./assets/conjunto1.jpg">
+                                <span><b>Conjunto 1</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto2')" id="img2M" src="./assets/conjunto2.jpg">
+                                <span><b>Conjunto 2</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto3')" id="img3M" src="./assets/conjunto3.jpg">
+                                <span><b>Conjunto 3</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto4')" id="img4M" src="./assets/conjunto4.jpg">
+                                <span><b>Conjunto 4</b></span>
+                            </div>
+
+                            <div class="card">
+                                <img onclick="selecionarconjunto('conjunto5')" id="img5M" src="./assets/conjunto5.jpg">
+                                <span><b>Conjunto 5</b></span>
+                            </div>
+                        </li>
+                    </div>
             </div>
+            <div class="divBtn">
+                <button class="botao" id="btnVotar" onclick="cadastrarRoupa()" style="display: none;">Votar</button>
+            </div>
+            </ul>
         </div>
     </section>
 </body>
@@ -84,30 +124,30 @@
 <script>
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-    
+
 
     var conjuntoEscolhido = "";
     function selecionarconjunto(roupa) {
 
-        
+
         if (roupa == 'conjunto1') {
             btnVotar.style.display = 'block'
 
             img1.style.height = '290px'
             img1.style.border = '5px solid black'
-            img2.style='none'
-            img3.style='none'
-            img4.style='none'
-            img5.style='none'
+            img2.style = 'none'
+            img3.style = 'none'
+            img4.style = 'none'
+            img5.style = 'none'
             conjuntoEscolhido = 1
         }
         else if (roupa == 'conjunto2') {
             btnVotar.style.display = 'block'
-            img1.style='none'
-            img3.style='none'
-            img4.style='none'
-            img5.style='none'
-        
+            img1.style = 'none'
+            img3.style = 'none'
+            img4.style = 'none'
+            img5.style = 'none'
+
             img2.style.height = '290px'
             img2.style.border = '5px solid black'
             conjuntoEscolhido = 2
@@ -115,20 +155,20 @@
 
         else if (roupa == 'conjunto3') {
             btnVotar.style.display = 'block'
-            img1.style='none'
-            img2.style='none'
-            img4.style='none'
-            img5.style='none'
+            img1.style = 'none'
+            img2.style = 'none'
+            img4.style = 'none'
+            img5.style = 'none'
             img3.style.height = '290px'
             img3.style.border = '5px solid black'
             conjuntoEscolhido = 3
         }
         else if (roupa == 'conjunto4') {
             btnVotar.style.display = 'block'
-            img1.style='none'
-            img2.style='none'
-            img3.style='none'
-            img5.style='none'
+            img1.style = 'none'
+            img2.style = 'none'
+            img3.style = 'none'
+            img5.style = 'none'
             img4.style.height = '290px'
             img4.style.border = '5px solid black'
             conjuntoEscolhido = 4
@@ -136,16 +176,16 @@
 
         else {
             btnVotar.style.display = 'block'
-            img1.style='none'
-            img2.style='none'
-            img3.style='none'
-            img4.style='none'
+            img1.style = 'none'
+            img2.style = 'none'
+            img3.style = 'none'
+            img4.style = 'none'
             img5.style.height = '290px'
             img5.style.border = '5px solid black'
-            conjuntoEscolhido = 4 
+            conjuntoEscolhido = 4
         }
     }
-        function cadastrarRoupa() {
+    function cadastrarRoupa() {
         var idUsuarioVar = sessionStorage.ID_USUARIO;
 
         // Enviando o valor da nova input
@@ -156,8 +196,8 @@
             },
             body: JSON.stringify({
                 idUsuarioVar: idUsuarioVar,
-                conjuntoEscolhido:conjuntoEscolhido,
-             
+                conjuntoEscolhido: conjuntoEscolhido,
+
 
             })
         }).then(function (resposta) {
@@ -176,7 +216,53 @@
 
         });
     }
+
+    // var btns = document.querySelectorAll(".nav-btn");
+    // var slideImg = document.querySelectorAll(".card");
+    // var slidernav = function(manual){
+    //     btns.forEach((btn) =>{
+    //         btn.classlist.remove("active");
+    //     });
+
+    //     slideImg.forEach((slide) =>{
+    //         slideImg.classlist.remove("active");
+    //     });
+
+    //     btns[manual].classList.add("active");
+    //     slideImg[manual].classList.add("active");
+    // }
+
+    //     btns.forEach((btn, i) => {
+    //         btn.addEventListener("click", () => {
+    //             slidernav(i);
+    //         })
+    //     })
+
     
+    function feminino() {
+        var f = document.getElementById("FemBtn").classList.add("white-btn")
+        var m = document.getElementById("MascBtn").classList.remove("white-btn")
+        var fem = document.getElementById("femininos").style.display= "flex"
+        var masc = document.getElementById("masculinos").style.display= "none"
+        fem.style.left = "50px";
+        masc.style.right = "-1000px";
+        f.className += " white-btn";
+        m.className = "btn";
+        fem.style.opacity = 1;
+        masc.style.opacity = 0;
 
+    }
+    function masculino() {
+        var f = document.getElementById("FemBtn").classList.remove("white-btn")
+        var m = document.getElementById("MascBtn").classList.add("white-btn")
+        var fem = document.getElementById("femininos").style.display= "none"
+        var masc = document.getElementById("masculinos").style.display= "flex"
+        fem.style.left = "-1000px";
+        masc.style.right = "65px";
+        f.className += " btn";
+        m.className = " white-btn";
+        fem.style.opacity = 0;
+        masc.style.opacity = 1;
 
+    }
 </script>

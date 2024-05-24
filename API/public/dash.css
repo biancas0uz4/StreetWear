@@ -1,3 +1,6 @@
-.grafico1{
+.grafico1 {
     width: 450px;
+    display: flex;
+    margin-left: 10%;
+
 }

@@ -91,6 +91,7 @@ body {
     justify-content: space-evenly;
 
 }
+
 .navbar a {
     color: white;
     text-decoration: none;
@@ -105,28 +106,34 @@ body {
     gap: 2vh;
     margin-left: 55%;
 }
+
 .containerTit a {
     text-decoration: none;
 }
 
 .container2 {
     height: 70vh;
-    width: 90vw;
+    width: 80%;
+    margin: auto;
     margin-top: 25vh;
-    margin-left: 10vh;
+    margin-left: 5vh;
     display: flex;
     justify-content: center;
     border: 2px solid black;
     background-color: #4682b4;
     align-items: center;
+    flex-direction: column;
 }
 
-/* .conteudo {} */
+.conteudo {
+    text-align: center;
+}
 
 .conteudo h1 {
     color: white;
     display: flex;
-    margin: 0;
+    align-items: center;
+    justify-content: center;
 
 }
 
@@ -137,9 +144,17 @@ body {
     width: 400px;
     flex-direction: row;
     object-fit: cover;
-  align-items: center;
+    align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
+}
 
+.imagens .card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px;
+    flex-direction: column;
 }
 
 .imagens .card img {
@@ -149,9 +164,14 @@ body {
     justify-content: center;
     border: 2px solid black;
     border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
-.botao{
+.imagens .card img:hover{
+    transform: scale(1.05);
+}
+
+.botao {
     border-radius: 15px;
     height: 40px;
     width: 120px;
@@ -163,6 +183,103 @@ body {
     font-weight: 800;
     font-style: normal;
     box-shadow: 4px 5px 0px #033158;
-    display: flex;
 
+
+}
+
+/* .slider {
+    display: block;
+    height: 293px;
+    width: 600px;
+    margin: auto;
+    margin-top: 20px;
+    position: relative;
+    align-items: center;
+} */
+
+.slider .imagens li{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* .slider-navigation{
+    z-index: 888;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(80px);
+    margin-bottom: 30px;
+}
+
+.slider-navigation .nav-btn{
+    width: 12px;
+    height: 12px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px #033158;
+    transition: 0.3 ease;
+}
+
+.slider-navigation .nav-btn.active{
+    background: #033158;
+}
+
+.slider-navigation .nav-btn:not(:last-child){
+    margin-right: 20px;
+}
+
+.slider-navigation .nav-btn:hover{
+    transform: scale(1.2);
+} */
+
+.nav-boato .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255,0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.nav-boato{
+    margin-right: 2.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    
+}
+
+.btn:hover{
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* #btnregister{
+    margin-left: 15px;
+} */
+
+.btn.white-btn{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn.btn.white-btn:hover{
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.container2 .imagens {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:fit-content;
+    height: 420px;
+    overflow: hidden;
+    z-index: 2;
 }
