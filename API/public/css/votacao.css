@@ -113,10 +113,11 @@ body {
 
 .container2 {
     height: 70vh;
-    width: 80%;
+    width: 85%;
     margin: auto;
     margin-top: 25vh;
-    margin-left: 5vh;
+    margin-left: 19vh;
+    margin-right: 10vh;
     display: flex;
     justify-content: center;
     border: 2px solid black;
@@ -139,13 +140,8 @@ body {
 
 
 .imagens {
-    display: flex;
-    height: 500px;
-    width: 400px;
     flex-direction: row;
     object-fit: cover;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
 }
 
@@ -153,7 +149,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px;
+    margin-top: -50px;
     flex-direction: column;
 }
 
@@ -187,16 +183,6 @@ body {
 
 }
 
-/* .slider {
-    display: block;
-    height: 293px;
-    width: 600px;
-    margin: auto;
-    margin-top: 20px;
-    position: relative;
-    align-items: center;
-} */
-
 .slider .imagens li{
     position: relative;
     display: flex;
@@ -205,39 +191,7 @@ body {
 
 }
 
-/* .slider-navigation{
-    z-index: 888;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transform: translateY(80px);
-    margin-bottom: 30px;
-}
-
-.slider-navigation .nav-btn{
-    width: 12px;
-    height: 12px;
-    background: white;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 0 2px #033158;
-    transition: 0.3 ease;
-}
-
-.slider-navigation .nav-btn.active{
-    background: #033158;
-}
-
-.slider-navigation .nav-btn:not(:last-child){
-    margin-right: 20px;
-}
-
-.slider-navigation .nav-btn:hover{
-    transform: scale(1.2);
-} */
-
-.nav-boato .btn {
+.nav-botao .btn {
     width: 130px;
     height: 40px;
     font-weight: 500;
@@ -248,7 +202,7 @@ body {
     transition: 0.3s ease;
 }
 
-.nav-boato{
+.nav-botao{
     margin-right: 2.5px;
     display: flex;
     justify-content: center;

@@ -46,7 +46,7 @@
         <div class="container2">
             <div class="conteudo">
                 <h1>Escolha seu conjunto favorito</h1>
-                <div class="nav-boato">
+                <div class="nav-botao">
                     <button onclick="feminino()" id="FemBtn" class="btn white-btn">Feminino</button>
                     <button onclick="masculino()" id="MascBtn" class="btn">Maculino</button>
                 </div>
@@ -182,7 +182,7 @@
             img4.style = 'none'
             img5.style.height = '290px'
             img5.style.border = '5px solid black'
-            conjuntoEscolhido = 4
+            conjuntoEscolhido = 5
         }
     }
     function cadastrarRoupa() {
@@ -216,28 +216,6 @@
 
         });
     }
-
-    // var btns = document.querySelectorAll(".nav-btn");
-    // var slideImg = document.querySelectorAll(".card");
-    // var slidernav = function(manual){
-    //     btns.forEach((btn) =>{
-    //         btn.classlist.remove("active");
-    //     });
-
-    //     slideImg.forEach((slide) =>{
-    //         slideImg.classlist.remove("active");
-    //     });
-
-    //     btns[manual].classList.add("active");
-    //     slideImg[manual].classList.add("active");
-    // }
-
-    //     btns.forEach((btn, i) => {
-    //         btn.addEventListener("click", () => {
-    //             slidernav(i);
-    //         })
-    //     })
-
     
     function feminino() {
         var f = document.getElementById("FemBtn").classList.add("white-btn")

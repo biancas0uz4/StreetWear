@@ -41,6 +41,7 @@ SELECT usuario.nome as Usuário,
  JOIN roupa 
  ON fkRoupa = idRoupa;
  
+ -- SELECT QUE VAI PRA DASHBOARD
  SELECT 
  roupa.nome as 'Conjunto Escolhido',
  count(idVotacao) as 'Conjunto Vencedor'
