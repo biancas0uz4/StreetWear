@@ -135,7 +135,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    margin-bottom: 0;
 }
 
 
@@ -179,8 +179,10 @@ body {
     font-weight: 800;
     font-style: normal;
     box-shadow: 4px 5px 0px #033158;
-
-
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-left: 43%;
 }
 
 .slider .imagens li{
@@ -200,6 +202,7 @@ body {
     border-radius: 30px;
     cursor: pointer;
     transition: 0.3s ease;
+    margin-top: 45px;
 }
 
 .nav-botao{

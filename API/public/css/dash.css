@@ -1,4 +1,131 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #05051fd0;
+    overflow-x: hidden;
+    cursor: pointer;
+}
+
+.titulo {
+    color: white;
+    font-weight: 700;
+    text-align: center;
+    font-size: 50px;
+    margin: 0;
+    position: absolute;
+    left: 18%;
+}
+
+.titulo2 {
+    color: white;
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    margin-top: 48px;
+    margin-left: 125px;
+
+}
+
+@font-face {
+    font-family: face;
+    src: url(../Britannic\ Bold\ Regular/.titulo/.titulo2/.banner);
+}
+
+@font-face {
+    font-family: face;
+    src: url(../Brawler/Brawler-Regular.ttf./.navbar);
+}
+
+* {
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    width: 300px;
+    color: white;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: larger;
+    gap: 5vh;
+
+
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.header {
+    border-bottom: 3px solid #4682b4;
+    position: fixed;
+    top: 0;
+    background-color: black;
+    width: 100%;
+    z-index: 3;
+}
+
+
+.container {
+    width: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+}
+
+.containerTit {
+    position: relative;
+    background-color: #4682b4;
+    color: white;
+    display: flex;
+    height: fit-content;
+    width: 200px;
+    align-items: start;
+    margin-left: 50px;
+    margin-bottom: -80px;
+
+}
+
+.header .container {
+    justify-content: space-evenly;
+
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #4682b4;
+}
+
+.divLC {
+    display: flex;
+    gap: 2vh;
+    margin-left: 55%;
+}
+
+.containerTit a {
+    text-decoration: none;
+}
+
+#Dashboard{
+    display: flex;
+    flex-direction: row;
+    margin-top: 100px;
+   
+}
+
 .grafico1 {
+    width: 450px;
+    display: flex;
+    margin-left: 10%;
+
+}
+
+.grafico2 {
     width: 450px;
     display: flex;
     margin-left: 10%;

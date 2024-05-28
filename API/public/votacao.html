@@ -29,7 +29,7 @@
                     <a href="#votacao">
                         <li>Votação</li>
                     </a>
-                    <a href="#Tendencias">
+                    <a href="./dash.html">
                         <li>Dashboard</li>
                     </a>
                     <!-- <li>Guia</li> -->
@@ -86,34 +86,40 @@
                         </li>
                         <li id="masculinos" style="display: none;">
                             <div class="card">
-                                <img onclick="selecionarconjunto('conjunto1')" id="img1M" src="./assets/conjunto1.jpg">
+                                <img onclick="selecionarconjunto('conjunto1M')" id="img1M"
+                                    src="./assets/conjunto1M.jpg">
                                 <span><b>Conjunto 1</b></span>
                             </div>
 
                             <div class="card">
-                                <img onclick="selecionarconjunto('conjunto2')" id="img2M" src="./assets/conjunto2.jpg">
+                                <img onclick="selecionarconjunto('conjunto2M')" id="img2M"
+                                    src="./assets/conjunto2M.jpg">
                                 <span><b>Conjunto 2</b></span>
                             </div>
 
                             <div class="card">
-                                <img onclick="selecionarconjunto('conjunto3')" id="img3M" src="./assets/conjunto3.jpg">
+                                <img onclick="selecionarconjunto('conjunto3M')" id="img3M"
+                                    src="./assets/conjunto3M.jpg">
                                 <span><b>Conjunto 3</b></span>
                             </div>
 
                             <div class="card">
-                                <img onclick="selecionarconjunto('conjunto4')" id="img4M" src="./assets/conjunto4.jpg">
+                                <img onclick="selecionarconjunto('conjunto4M')" id="img4M"
+                                    src="./assets/conjunto4M.jpg">
                                 <span><b>Conjunto 4</b></span>
                             </div>
 
                             <div class="card">
-                                <img onclick="selecionarconjunto('conjunto5')" id="img5M" src="./assets/conjunto5.jpg">
+                                <img onclick="selecionarconjunto('conjunto5M')" id="img5M"
+                                    src="./assets/conjunto5M.jpg">
                                 <span><b>Conjunto 5</b></span>
                             </div>
                         </li>
                     </div>
-            </div>
-            <div class="divBtn">
-                <button class="botao" id="btnVotar" onclick="cadastrarRoupa()" style="display: none;">Votar</button>
+                    <div class="divBtn">
+                        <button class="botao" id="btnVotar" onclick="cadastrarRoupa()"
+                            style="display: none;">Votar</button>
+                    </div>
             </div>
             </ul>
         </div>
@@ -184,6 +190,61 @@
             img5.style.border = '5px solid black'
             conjuntoEscolhido = 5
         }
+
+        if (roupa == 'conjunto1M') {
+            btnVotar.style.display = 'block'
+
+            img1M.style.height = '290px'
+            img1M.style.border = '5px solid black'
+            img2M.style = 'none'
+            img3M.style = 'none'
+            img4M.style = 'none'
+            img5M.style = 'none'
+            conjuntoEscolhido = 6
+        }
+        else if (roupa == 'conjunto2M') {
+            btnVotar.style.display = 'block'
+            img1M.style = 'none'
+            img3M.style = 'none'
+            img4M.style = 'none'
+            img5M.style = 'none'
+
+            img2M.style.height = '290px'
+            img2M.style.border = '5px solid black'
+            conjuntoEscolhido = 7
+        }
+
+        else if (roupa == 'conjunto3M') {
+            btnVotar.style.display = 'block'
+            img1M.style = 'none'
+            img2M.style = 'none'
+            img4M.style = 'none'
+            img5M.style = 'none'
+            img3M.style.height = '290px'
+            img3M.style.border = '5px solid black'
+            conjuntoEscolhido = 8
+        }
+        else if (roupa == 'conjunto4M') {
+            btnVotar.style.display = 'block'
+            img1M.style = 'none'
+            img2M.style = 'none'
+            img3M.style = 'none'
+            img5M.style = 'none'
+            img4M.style.height = '290px'
+            img4M.style.border = '5px solid black'
+            conjuntoEscolhido = 9
+        }
+
+        else {
+            btnVotar.style.display = 'block'
+            img1M.style = 'none'
+            img2M.style = 'none'
+            img3M.style = 'none'
+            img4M.style = 'none'
+            img5M.style.height = '290px'
+            img5M.style.border = '5px solid black'
+            conjuntoEscolhido = 10
+        }
     }
     function cadastrarRoupa() {
         var idUsuarioVar = sessionStorage.ID_USUARIO;
@@ -216,12 +277,12 @@
 
         });
     }
-    
+
     function feminino() {
         var f = document.getElementById("FemBtn").classList.add("white-btn")
         var m = document.getElementById("MascBtn").classList.remove("white-btn")
-        var fem = document.getElementById("femininos").style.display= "flex"
-        var masc = document.getElementById("masculinos").style.display= "none"
+        var fem = document.getElementById("femininos").style.display = "flex"
+        var masc = document.getElementById("masculinos").style.display = "none"
         fem.style.left = "50px";
         masc.style.right = "-1000px";
         f.className += " white-btn";
@@ -233,8 +294,8 @@
     function masculino() {
         var f = document.getElementById("FemBtn").classList.remove("white-btn")
         var m = document.getElementById("MascBtn").classList.add("white-btn")
-        var fem = document.getElementById("femininos").style.display= "none"
-        var masc = document.getElementById("masculinos").style.display= "flex"
+        var fem = document.getElementById("femininos").style.display = "none"
+        var masc = document.getElementById("masculinos").style.display = "flex"
         fem.style.left = "-1000px";
         masc.style.right = "65px";
         f.className += " btn";

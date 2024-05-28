@@ -1,40 +1,114 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/dash.css">
-    <title>Dashboard</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./css/dash.css">
+  <title>Dashboard</title>
 </head>
+
 <body>
-    <div class="grafico1">
-        <canvas id="myChart"></canvas>
+  <section id="dash">
+    <div class="header">
+      <div class="containerTit">
+        <a href="./index.html">
+          <h1 class="titulo">Street</h1>
+          <div>
+            <h2 class="titulo2">Wear</h2>
+          </div>
+        </a>
       </div>
-      
-      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-      
-      <script>
-        const ctx = document.getElementById('myChart');
-      
-        new Chart(ctx, {
-          type: 'doughnut',
-          data: {
-            labels: ['Conjunto 1', 'Conjunto 2', 'Conjunto 3', 'Conjunto 4', 'Conjunto 5'],
-            datasets: [{
-              label: 'Quantidade de Votos',
-              data: [20, 19, 3, 5, 2],
-              borderWidth: 1
-            }]
+      <div class="container">
+        <ul class="navbar">
+          <a href="./index.html">
+            <li>Home</li>
+          </a>
+          <a href="./votacao.html">
+            <li>Votação</li>
+          </a>
+          <a href="#dash">
+            <li>Dashboard</li>
+          </a>
+          <!-- <li>Guia</li> -->
+
+          <div class="divLC">
+            Olá<span id="b_usuario">usuário</span>!
+          </div>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="Dashboard">
+    <div class="grafico1">
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <div class="grafico2">
+      <canvas id="myChart2"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById('myChart');
+
+      new Chart(ctx, {
+        type: 'bar',
+        data: {
+          labels: ['Conjunto 1', 'Conjunto 2', 'Conjunto 3', 'Conjunto 4', 'Conjunto 5'],
+          datasets: [{
+            label: 'Feminino',
+            data: [20, 19, 3, 5, 2],
+            borderWidth: 1
+
           },
-          options: {
-            scales: {
-              y: {
-                beginAtZero: true
-              }
+          {
+
+            label: 'Masculino',
+            data: [20, 19, 3, 5, 2],
+            borderWidth: 1
+
+          }
+          ]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
             }
           }
-        });
-      </script>
-      
+        }
+      });
+
+      const ctx2 = document.getElementById('myChart2');
+
+      new Chart(ctx2, {
+        type: 'doughnut',
+        data: {
+          labels: ['Total os Votos', 'Feminino', 'Masculino'],
+          datasets: [{
+            label: 'Total de votos',
+            data: [39, 20, 19],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
+
+    </script>
+  </section>
 </body>
+
 </html>
+
+<script>
+  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+</script>

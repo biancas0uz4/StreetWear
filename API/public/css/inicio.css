@@ -49,8 +49,8 @@ body {
     align-items: center;
     font-size: larger;
     gap: 5vh;
-    
-    
+
+
 }
 
 .navbar li {
@@ -84,6 +84,14 @@ body {
     margin-left: 50px;
     margin-bottom: -80px;
 
+}
+
+.containerTit a {
+    transition: transform 0.3 ease;
+}
+
+.containerTit a:hover {
+    transform: scale(1.06);
 }
 
 .header .container {
