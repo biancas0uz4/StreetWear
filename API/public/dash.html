@@ -44,43 +44,66 @@
     <div class="grafico1">
       <canvas id="myChart"></canvas>
     </div>
-
+    
     <div class="grafico2">
       <canvas id="myChart2"></canvas>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    
     <script>
-      const ctx = document.getElementById('myChart');
+      b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
-      new Chart(ctx, {
-        type: 'bar',
-        data: {
-          labels: ['Conjunto 1', 'Conjunto 2', 'Conjunto 3', 'Conjunto 4', 'Conjunto 5'],
-          datasets: [{
-            label: 'Feminino',
-            data: [20, 19, 3, 5, 2],
-            borderWidth: 1
+      document.addEventListener("DOMContentLoaded", function () {
+    const ctx = document.getElementById('myChart').getContext('2d');
 
-          },
-          {
-
-            label: 'Masculino',
-            data: [20, 19, 3, 5, 2],
-            borderWidth: 1
-
-          }
-          ]
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true
+    fetch('/usuarios/dados-dashboard')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao obter os dados do servidor');
             }
-          }
-        }
-      });
+            return response.json();
+        })
+        .then(data => {
+            console.log('Dados recebidos do servidor:', data);
+
+            // Função para determinar a cor com base no rótulo
+            const determineColor = (label) => {
+                // Verifica se o rótulo termina com 'M'
+                if (label.endsWith('M')) {
+                    return 'rgba(54, 162, 235, 0.2)'; // Cor para conjuntos masculinos
+                } else {
+                    return 'rgba(255, 99, 132, 0.2)'; // Cor para conjuntos femininos
+                }
+            };
+
+            new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: data.map(item => item['Conjunto Escolhido']),
+                    datasets: [{
+                        label: 'Conjuntos',
+                        data: data.map(item => item['Conjunto Vencedor']),
+                        backgroundColor: data.map(item => determineColor(item['Conjunto Escolhido'])),
+                        borderColor: data.map(item => determineColor(item['Conjunto Escolhido']).replace('0.2', '1')), // Aumenta a opacidade para a borda
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        })
+        .catch(error => {
+            console.error('Erro ao obter os dados:', error);
+        });
+});
+
+
 
       const ctx2 = document.getElementById('myChart2');
 
@@ -108,7 +131,3 @@
 </body>
 
 </html>
-
-<script>
-  b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-</script>
