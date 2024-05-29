@@ -39,6 +39,18 @@ function obterTotalVotos(req, res) {
         });
 }
 
+function getKpi(req, res) {
+    var idUser = req.params.idUser;
+
+    usuarioModel.getKpi(idUser)
+        .then(function (resultado) {
+            if (resultado.length > 0) {
+                res.status(200).json(resultado);
+            } else {
+                res.status(204).send("Nenhum resultado encontrado!");
+            }
+        });
+}
 
 
 function autenticar(req, res) {
@@ -171,5 +183,6 @@ module.exports = {
     cadastrar,
     cadastrarMusico,
     buscarConjuntosVotados,
-    obterTotalVotos
+    obterTotalVotos,
+    getKpi
 }

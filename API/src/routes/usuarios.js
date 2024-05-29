@@ -23,4 +23,8 @@ router.get("/dados-grafico2", function (req, res) {
     usuarioController.obterTotalVotos(req, res);
 })
 
+router.get("/kpi/:idUser", function (req, res) {
+    usuarioController.getKpi(req, res);
+});
+
 module.exports = router;

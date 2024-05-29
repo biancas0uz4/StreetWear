@@ -111,18 +111,38 @@ body {
     text-decoration: none;
 }
 
-#Dashboard{
+#Dashboard {
     display: flex;
     flex-direction: row;
     margin-top: 100px;
-   
+
 }
 
 .grafico1 {
     width: 450px;
     display: flex;
     margin-left: 10%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 50px;
+}
 
+#kpi_box {
+    background-color: white;
+    border-radius: 30px;
+    width: 300px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around
+}
+
+#kpi_title {
+    width: 200px;
+    text-align: justify;
+    font-size: 25px;
+    font-weight: 900;
 }
 
 .grafico2 {

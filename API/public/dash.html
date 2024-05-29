@@ -43,6 +43,10 @@
   <section id="Dashboard">
     <div class="grafico1">
       <canvas id="myChart"></canvas>
+      <div id="kpi_box">
+        <div id="kpi_value"></div>
+        <div id="kpi_title">Total de votos do usuário</div>
+      </div>
     </div>
 
     <div class="grafico2">
@@ -106,7 +110,7 @@
       document.addEventListener('DOMContentLoaded', function () {
         const ctx2 = document.getElementById('myChart2').getContext('2d');
 
-        fetch('/usuario/dados-grafico2')
+        fetch('/usuarios/dados-grafico2')
           .then(response => {
             if (!response.ok) {
               throw new Error('Erro ao obter os dados do servidor');
@@ -137,6 +141,23 @@
             });
           })
           .catch(error => console.error('Erro ao obter dados do gráfico:', error));
+      });
+
+      var idUser = sessionStorage.ID_USUARIO;
+
+      document.addEventListener('DOMContentLoaded', function () {
+        fetch(`/usuarios/kpi/${idUser}`)
+          .then(response => {
+            if (!response.ok) {
+              throw new Error('Erro ao obter os dados do servidor');
+            }
+            return response.json();
+          })
+          .then(data => {
+            console.log(data)
+            kpi_value.innerHTML = data[0].qtd;
+          })
+          .catch(error => console.error('Erro ao obter dados da kpi:', error));
       });
 
     </script>
