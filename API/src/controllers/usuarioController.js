@@ -17,6 +17,28 @@ function buscarConjuntosVotados(req, res) {
         });
 }
 
+function obterTotalVotos(req, res) {
+    var dadosGrafico = {};
+
+    usuarioModel.totalDeVotos(req)
+        .then(function (resultado) {
+            dadosGrafico.totalVotos = resultado[0].totalVotos;
+            return usuarioModel.totalDeVotosFemininos(req);
+        })
+        .then(function (resultado) {
+            dadosGrafico.totalVotosFemininos = resultado[0].totalVotosFemininos;
+            return usuarioModel.totalDeVotosMasculinos(req);
+        })
+        .then(function (resultado) {
+            dadosGrafico.totalVotosMasculinos = resultado[0].totalVotosMasculinos;
+            res.json(dadosGrafico);
+        })
+        .catch(function (erro) {
+            console.log('Erro ao obter total de votos:', erro);
+            res.status(500).json(erro);
+        });
+}
+
 
 
 function autenticar(req, res) {
@@ -44,7 +66,7 @@ function autenticar(req, res) {
                             nome: resultadoAutenticar[0].nome,
                         })
 
-                        
+
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {
@@ -75,13 +97,13 @@ function cadastrar(req, res) {
         res.status(400).send("Seu nome está undefined!");
     } else if (sobrenome == undefined) {
         res.status(400).send("Sua empresa está undefined!");
-    } else if (telefone == undefined){
+    } else if (telefone == undefined) {
         res.status(400).send("Seu CPF está undefined!");
     } else if (email == undefined) {
         res.status(400).send("Seu email está undefined!");
     } else if (senha == undefined) {
         res.status(400).send("Sua senha está undefined!");
-    }else{
+    } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, sobrenome, telefone, email, senha)
@@ -148,5 +170,6 @@ module.exports = {
     autenticar,
     cadastrar,
     cadastrarMusico,
-    buscarConjuntosVotados
+    buscarConjuntosVotados,
+    obterTotalVotos
 }

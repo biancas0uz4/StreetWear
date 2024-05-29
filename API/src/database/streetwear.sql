@@ -31,6 +31,12 @@ dataHora datetime);
 SELECT * FROM votacao;
 SELECT * FROM roupa;
 
+INSERT INTO roupa(nome) VALUES
+('Conjunto 1M'),
+('Conjunto 2M'),
+('Conjunto 3M'),
+('Conjunto 4M'),
+('Conjunto 5M');
 
 SELECT usuario.nome as Usuário,
  usuario.email as Email, 
@@ -41,7 +47,7 @@ SELECT usuario.nome as Usuário,
  JOIN roupa 
  ON fkRoupa = idRoupa;
  
- -- SELECT QUE VAI PRA DASHBOARD
+ -- SELECTS QUE VÃO PARA DASHBOARD
  SELECT 
  roupa.nome as 'Conjunto Escolhido',
  count(idVotacao) as 'Conjunto Vencedor'
@@ -50,6 +56,26 @@ SELECT usuario.nome as Usuário,
  ON fkRoupa = idRoupa
  group by  roupa.nome;
  
+ -- TOTAL DE VOTOS 
+ SELECT count(idVotacao) from votacao;
+ 
+ -- TOTAL DE VOTOS CONJUNTOS FEMININOS
+ SELECT count(idVotacao) from votacao
+ join roupa 
+ on fkRoupa = idRoupa
+ where roupa.nome like '%Feminino%';
+ 
+ -- TOTAL DE VOTOS CONJUNTOS MASCULINOS 
+  SELECT count(idVotacao) from votacao
+ join roupa 
+ on fkRoupa = idRoupa
+ where roupa.nome like '%Masculino%';
+ 
+ -- TOTAL DE USUÁRIOS       KPI
+ SELECT count(idUser) from usuario;
+ select idUser from usuario;
+ 
+ ---------------------------------------------------------------
  SELECT * FROM votacao JOIN usuario
  ON fkUser = idUser
  LEFT JOIN roupa 

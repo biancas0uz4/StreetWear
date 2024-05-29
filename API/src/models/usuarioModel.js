@@ -35,7 +35,7 @@
     }
 
     function buscarConjuntosVotados() {
-        // Definir a instrução SQL para selecionar os conjuntos de roupas mais votados
+        // Define a instrução SQL para selecionar os conjuntos de roupas mais votados
         var instrucaoSql = `
             SELECT 
                 roupa.nome AS 'Conjunto Escolhido',
@@ -55,9 +55,39 @@
         return database.executar(instrucaoSql);
     }
 
+    function totalDeVotos() {
+        var instrucaoSql = `
+            SELECT count(idVotacao) AS totalVotos FROM votacao;
+        `;
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+    }
+    
+    function totalDeVotosFemininos() {
+        var instrucaoSql = `
+            SELECT count(idVotacao) AS totalVotosFemininos FROM votacao
+            JOIN roupa ON fkRoupa = idRoupa
+            WHERE roupa.nome LIKE '%Feminino%';
+        `;
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+    }
+
+    function totalDeVotosMasculinos() {
+        var instrucaoSql = `
+            SELECT count(idVotacao) AS totalVotosMasculinos FROM votacao
+            JOIN roupa ON fkRoupa = idRoupa
+            WHERE roupa.nome LIKE '%Masculino%';
+        `;
+        console.log("Executando a instrução SQL: \n" + instrucaoSql);
+        return database.executar(instrucaoSql);
+    }
 
     module.exports = {
         autenticar,
         cadastrar,
-        buscarConjuntosVotados
+        buscarConjuntosVotados,
+        totalDeVotos,
+        totalDeVotosFemininos,
+        totalDeVotosMasculinos
     };

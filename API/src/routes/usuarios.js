@@ -19,4 +19,8 @@ router.get("/dados-dashboard", function (req, res) {
     usuarioController.buscarConjuntosVotados(req, res);
 });
 
+router.get("/dados-grafico2", function (req, res) {
+    usuarioController.obterTotalVotos(req, res);
+})
+
 module.exports = router;
