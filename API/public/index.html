@@ -28,7 +28,9 @@
                     <a href="#Tendencias">
                         <li>Tendências</li>
                     </a>
-                    <li>Guia</li>
+                    <a href="#guia">
+                        <li>Guia</li>
+                    </a>
 
                     <div class="divLC">
                         <a href="login2.html">
@@ -202,7 +204,8 @@
                     </section>
                     <section id="calcas">
                         <div class="conteudo2">
-                            <p> Calças e Shorts: Calças de moletom, jeans rasgados, calças cargo e shorts são comuns no streetwear, priorizando o conforto e a funcionalidade.
+                            <p> Calças e Shorts: Calças de moletom, jeans rasgados, calças cargo e shorts são comuns no
+                                streetwear, priorizando o conforto e a funcionalidade.
                             </p>
                         </div>
                         <div class="card-container">
@@ -244,7 +247,9 @@
                     </section>
                     <section id="calcados">
                         <div class="conteudo2">
-                            <p>Calçados: modelos retro e vintage, tênis high-top, e calçados com cores vibrantes e padrões arrojados estão em alta, refletindo a fusão de nostalgia e inovação no estilo urbano
+                            <p>Calçados: modelos retro e vintage, tênis high-top, e calçados com cores vibrantes e
+                                padrões arrojados estão em alta, refletindo a fusão de nostalgia e inovação no estilo
+                                urbano
                             </p>
                         </div>
                         <div class="card-container">
@@ -286,16 +291,17 @@
                     </section>
                     <section id="acessorios">
                         <div class="conteudo2">
-                            <p> Blusas: Camisetas com estampas gráficas, muitas vezes com referências a cultura pop,
-                                música,
-                                arte de rua, marcas ou mensagens subversivas.
+                            <p> Acessórios: Acessórios como mochilas, bolsas de cintura (sling bags), correntes, óculos
+                                de sol, relógios e jóias desempenham um papel importante na complementação do look
+                                streetwear.
+
                             </p>
                         </div>
                         <div class="card-container">
                             <div class="cardM">
                                 <div class="card-inner">
                                     <div class="front">
-                                        <img src="./assets/blusa1.jpg">
+                                        <img src="./assets/a1.jpg">
                                     </div>
                                     <div class="back">
                                         <p>descricao</p>
@@ -306,7 +312,7 @@
                                 <div class="cardM">
                                     <div class="card-inner">
                                         <div class="front">
-                                            <img src="./assets/blusa2.jpg">
+                                            <img src="./assets/a2.jpg">
                                         </div>
                                         <div class="back">
                                             <p>descricao</p>
@@ -318,7 +324,7 @@
                                 <div class="cardM">
                                     <div class="card-inner">
                                         <div class="front">
-                                            <img src="./assets/blusa3.jpg">
+                                            <img src="./assets/a3.jpg">
                                         </div>
                                         <div class="back">
                                             <p>descricao</p>
@@ -333,7 +339,36 @@
         </div>
         </div>
         </div>
-    
+    </section>
+
+    <section id="guia">
+        <div class="slide-container">
+            <div class="slider">
+                <div class="numbertext">1</div>
+                <img src="./assets/brechoVoJudith.jpg">
+                <div class="text">
+                    <h3>Brechó Vó Judith</h3>
+                    <p>Rua Cayowaá, 2304 · (11) 3801-9001</p>
+                </div>
+            </div>
+
+            <div class="slider">
+                <div class="numbertext">2</div>
+                <img src="./assets/digForFashion.JPG">
+                <div class="text">
+                    <h3>Dig For Fashion Augusta - Brechó</h3>
+                    <p>R. Augusta, 2078</p>
+                </div>
+            </div>
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+        <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
     </section>
 
 </body>
@@ -391,7 +426,34 @@
         section.scrollIntoView();
     };
 
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slider");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 
 
 </script>
