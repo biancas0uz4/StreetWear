@@ -361,15 +361,36 @@ section {
     width: 350px;
 }
 
+#guia{
+    background-color: #DEDAD5;
+}
+
 .slide-container {
     max-width: 1000px;
     position: relative;
     margin: auto;
-   
+    flex-wrap: wrap;
+    background-color: #DEDAD5;
+}
+
+.centralizadoT{
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
 .slider {
     display: none;
+    position: relative;
+    text-align: center;
+}
+
+.slider img {
+    display: block;
+    margin: auto;
+    border-radius: 10px;
+    height: 450px;
 }
 
 .prev,
@@ -380,7 +401,7 @@ section {
     width: auto;
     margin-top: -22px;
     padding: 16px;
-    color: white;
+    color: black;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
@@ -399,11 +420,11 @@ section {
 }
 
 .text {
-    color: #f2f2f2;
+    color: black;
     font-size: 15px;
     padding: 8px 12px;
     position: absolute;
-    bottom: 8px;
+    bottom: -80px;
     width: 100%;
     text-align: center;
 }
@@ -423,7 +444,8 @@ section {
     margin: 0 2px;
     background-color: #bbb;
     border-radius: 50%;
-    display: inline-block;
+    display: inline-flex;
+    margin-top: 50px;
     transition: background-color 0.6s ease;
 }
 
