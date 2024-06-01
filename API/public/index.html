@@ -456,27 +456,38 @@
                 <h2>Desenvolvedora do Site</h2>
                 <div class="conteudo3">
                     <div class="texto">
-                        <p>O <i><b>StreetWear</b></i> entrou na minha vida em 2020, durante a pandemia. Naquela época, eu
+                        <p>O <i><b>StreetWear</b></i> entrou na minha vida em 2020, durante a pandemia. Naquela época,
+                            eu
                             estava no início do ensino médio e completamente isolada. Passei muito tempo no TikTok, uma
-                            plataforma que ganhou uma enorme popularidade durante a pandemia. Esse aplicativo tornou-se um
-                            grande influenciador de tendências de moda, com inúmeros criadores de conteúdo compartilhando
-                            dicas de estilo e inspirações diárias. Assistindo a esses conteúdos, fui mudando meu estilo e
-                            comecei a me sentir mais confortável e confiante. Isso não só transformou meu guarda-roupa, mas
+                            plataforma que ganhou uma enorme popularidade durante a pandemia. Esse aplicativo tornou-se
+                            um
+                            grande influenciador de tendências de moda, com inúmeros criadores de conteúdo
+                            compartilhando
+                            dicas de estilo e inspirações diárias. Assistindo a esses conteúdos, fui mudando meu estilo
+                            e
+                            comecei a me sentir mais confortável e confiante. Isso não só transformou meu guarda-roupa,
+                            mas
                             também elevou significativamente minha autoestima.
                         </p>
                         <p>
-                            O site “StreetWear”, tem como principal objetivo explorar as tendências mais populares na moda
-                            Street, proporcionando aos visitantes uma compreensão desse estilo que tanto gosto. Através de
-                            conteúdos cuidadosamente elaborados, busca informar e inspirar as pessoas, apresentando as mais
-                            recentes novidades e influências no mundo do streetwear e aumentar a visibilidade dos brechós,
-                            promovendo uma moda mais sustentável, dessa maneira incentivando os visitantes a considerarem a
-                            importância de práticas de consumo consciente e a adotarem opções de vestuário que contribuam
+                            O site “StreetWear”, tem como principal objetivo explorar as tendências mais populares na
+                            moda
+                            Street, proporcionando aos visitantes uma compreensão desse estilo que tanto gosto. Através
+                            de
+                            conteúdos cuidadosamente elaborados, busca informar e inspirar as pessoas, apresentando as
+                            mais
+                            recentes novidades e influências no mundo do streetwear e aumentar a visibilidade dos
+                            brechós,
+                            promovendo uma moda mais sustentável, dessa maneira incentivando os visitantes a
+                            considerarem a
+                            importância de práticas de consumo consciente e a adotarem opções de vestuário que
+                            contribuam
                             para a preservação do meio ambiente, reforçando a ideia de que é possível estar na moda de
                             maneira responsável.
                         </p>
                     </div>
                     <div class="foto">
-                        <img src="./assets/eu.jpg" >
+                        <img src="./assets/eu.jpg">
                     </div>
                 </div>
             </div>
@@ -602,6 +613,14 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
     }
+
+    window.addEventListener('scroll', function () {
+        // Verifica se o usuário chegou ao final da página
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+            // Se chegou ao final, exibe um alerta
+            alert('Agora que você sabe mais sobre o assunto, e está por dentro das tendências, que tal se cadastrar para votar nos seu conjuntos favoritos?');
+        }
+    });
 
 
 </script>
