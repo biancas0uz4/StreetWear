@@ -129,13 +129,15 @@ body {
 }
 
 #kpi_box {
-    background-color: white;
+    background-color: #05051f;
+    box-shadow: 4px 4px white;
     border-radius: 30px;
     width: 300px;
     height: 150px;
     display: flex;
     align-items: center;
     justify-content: space-around
+    
 }
 
 #kpi_title {
@@ -143,6 +145,11 @@ body {
     text-align: justify;
     font-size: 25px;
     font-weight: 900;
+    color: white;
+}
+
+#kpi_value {
+    color: white;
 }
 
 .grafico2 {
