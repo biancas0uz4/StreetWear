@@ -10,8 +10,8 @@ router.post("/autenticar", function (req, res) {
     usuarioController.autenticar(req, res);
 });
 
-router.post("/cadastrarMusico", function (req, res) {
-    usuarioController.cadastrarMusico(req, res);
+router.post("/cadastrarRoupa", function (req, res) {
+    usuarioController.cadastrarRoupa(req, res);
 })
 
 // Ajuste a rota para "/dados-dashboard"
@@ -28,3 +28,4 @@ router.get("/kpi/:idUser", function (req, res) {
 });
 
 module.exports = router;
+

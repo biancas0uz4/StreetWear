@@ -137,7 +137,7 @@ function cadastrar(req, res) {
 }
 
 
-function cadastrarMusico(req, res) {
+function cadastrarRoupa(req, res) {
     // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
     var nome = req.body.nomeServer;
     var sobrenome = req.body.sobrenomeServer;
@@ -159,7 +159,7 @@ function cadastrarMusico(req, res) {
     } else {
 
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
-        usuarioModel.cadastrarMusico(nome, sobrenome, telefone, email, senha)
+        usuarioModel.cadastrarRoupa(nome, sobrenome, telefone, email, senha)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -181,7 +181,7 @@ function cadastrarMusico(req, res) {
 module.exports = {
     autenticar,
     cadastrar,
-    cadastrarMusico,
+    cadastrarRoupa,
     buscarConjuntosVotados,
     obterTotalVotos,
     getKpi
