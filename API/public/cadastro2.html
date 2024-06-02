@@ -94,7 +94,7 @@
       //finalizarAguardar();
       return false;
 
-    } else if (senhaVar.length <= 6) {
+    } else if (senhaVar.length < 6) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
         "(Senha deve conter mais de 6 caracteres)";
