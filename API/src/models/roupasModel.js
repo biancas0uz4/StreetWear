@@ -8,10 +8,10 @@ function votacao(idUsuarioVar, conjuntoEscolhido) {
     var dataHora = new Date().toISOString(); // Obtém a data e hora atual no formato ISO
 
     var instrucao2 = `
-        INSERT INTO votacao (fkUser, fkRoupa, dataHora) VALUE (${idUsuarioVar}, ${conjuntoEscolhido}, ${dataHora});
+        INSERT INTO votacao (fkUser, fkRoupa, dataHora) VALUE (${idUsuarioVar}, ${conjuntoEscolhido}, now());
     `;
     console.log("Executando a instrução SQL: \n" + instrucao2);
-    return database.executar(instrucao2);   
+    return database.executar(instrucao2);
 }
 
 

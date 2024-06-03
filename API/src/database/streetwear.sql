@@ -75,10 +75,7 @@ SELECT usuario.nome as Usuário,
  SELECT count(idUser) from usuario;
  select idUser from usuario;
 
-
  select count(u.nome) as qtd from usuario u left join votacao v on u.idUser = v.fkUser where u.idUser = 1;
- 
- 
  
  ---------------------------------------------------------------
  SELECT * FROM votacao JOIN usuario
