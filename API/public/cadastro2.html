@@ -54,10 +54,7 @@
 
 <script>
   function cadastrar() {
-    //aguardar();
-
-    //Recupere o valor da nova input pelo nome do id
-    // Agora vá para o método fetch logo abaixo
+    
     var nomeVar = input_nome.value;
     var sobrenomeVar = input_sobrenome.value;
     var emailVar = input_email.value;
@@ -75,53 +72,52 @@
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Preencha todos os campos em branco)";
+        "Preencha todos os campos em branco";
 
-      // finalizarAguardar();
       return false;
-    } else if (nomeVar.length < 1) {
+    } if (nomeVar.length < 1) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Nome com pelo menos 1 caracter)";
+        "Nome com pelo menos 1 caracter";
 
-      //finalizarAguardar();
       return false;
-    } else if (emailVar.indexOf("@") == '-1' && emailVar.indexOf(".")) {
+    }
+    if (emailVar.indexOf("@") == '-1' || emailVar.indexOf(".") == "-1") {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(E-mail deve conter '@' e '.')";
+        "E-mail deve conter '@' e '.'";
 
-      //finalizarAguardar();
       return false;
 
-    } else if (senhaVar.length < 6) {
+    }
+    if (senhaVar.length < 6) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Senha deve conter mais de 6 caracteres)";
+        "Senha deve conter mais de 6 caracteres";
 
-      alert("Senha menor que 6")
-      //finalizarAguardar();
       return false;
 
-    } else if (confirmacaoSenhaVar != senhaVar) {
+    }
+    if (confirmacaoSenhaVar != senhaVar) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Senha deve conter mais de 6 caracteres)";
+        "Senha deve ser igual";
 
-      //finalizarAguardar();
       return false;
-    } else if (telefoneVar.length >= 12) {
+    }
+    if (telefoneVar.length >= 12) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
-        "(Telefone deve conter 12 caracteres)";
+        "Telefone deve conter 12 caracteres";
 
-      //finalizarAguardar();
       return false;
-    } else {
-      setInterval(sumirMensagem, 5000);
     }
 
+    enviarDados(nomeVar, sobrenomeVar, telefoneVar, emailVar, senhaVar)
 
+  }
+
+  function enviarDados(nomeVar, sobrenomeVar, telefoneVar, emailVar, senhaVar) {
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
@@ -149,14 +145,14 @@
           }, "1000");
 
           limparFormulario();
-          // finalizarAguardar();
+         
         } else {
           throw "Houve um erro ao tentar realizar o cadastro!";
         }
       })
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
-        // finalizarAguardar();
+       
       });
 
 
@@ -164,21 +160,6 @@
     return false;
   }
 
-  //   function listar() {
-  //     fetch("/usuarios/listar", {
-  //       method: "GET",
-  //     })
-  //       .then(function (resposta) {
-  //         resposta.json().then((s) => {
-  //           s.forEach(() => {
-  //             listas.innerHTML += `<option value='${usuario.idUser}'>${usuario.nome}</option>`;
-  //           });
-  //         });
-  //       })
-  //       .catch(function (resposta) {
-  //         console.log(`#ERRO: ${resposta}`);
-  //       });
-  //  }
 
   function sumirMensagem() {
     cardErro.style.display = "none";

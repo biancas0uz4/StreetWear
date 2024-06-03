@@ -30,7 +30,6 @@
           <a href="#dash">
             <li>Dashboard</li>
           </a>
-          <!-- <li>Guia</li> -->
 
           <div class="divLC">
             Olá<span id="b_usuario">usuário</span>!
@@ -71,9 +70,9 @@
           .then(data => {
             console.log('Dados recebidos do servidor:', data);
 
-            // Função para determinar a cor com base no rótulo
+            
             const determineColor = (label) => {
-              // Verifica se o rótulo termina com 'M'
+              
               if (label.startsWith('M')) {
                 return 'rgba(54, 162, 235, 0.2)'; // Cor para conjuntos masculinos
               } else {

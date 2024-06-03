@@ -47,7 +47,7 @@
         if (emailVar == "" || senhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Preencha todos os campos em branco)";
-            //finalizarAguardar();
+            
             return false;
         }
         else {
@@ -82,7 +82,7 @@
 
                     setTimeout(function () {
                         window.location.href = "./votacao.html";
-                    }, 1000); // apenas para exibir o loading
+                    }, 1000); 
 
                 });
 
@@ -93,7 +93,7 @@
 
                 resposta.text().then(texto => {
                     console.error(texto);
-                    // finalizarAguardar(texto);
+                  
                 });
             }
 
@@ -101,7 +101,7 @@
             console.log(erro);
         })
 
-        // return false;
+        
     }
 
     function sumirMensagem() {
