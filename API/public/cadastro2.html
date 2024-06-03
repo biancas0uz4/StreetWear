@@ -121,15 +121,13 @@
       setInterval(sumirMensagem, 5000);
     }
 
-    // Enviando o valor da nova input
+
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        // crie um atributo que recebe o valor recuperado aqui
-        // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
         sobrenomeServer: sobrenomeVar,
         telefoneServer: telefoneVar,
@@ -147,8 +145,8 @@
             "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
 
           setTimeout(() => {
-            window.location = "login2.html";
-          }, "2000");
+            window.location = "./login2.html";
+          }, "1000");
 
           limparFormulario();
           // finalizarAguardar();

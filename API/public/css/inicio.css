@@ -155,8 +155,9 @@ section {
     text-align: center;
     font-size: 45px;
     color: #044783;
-    text-shadow: 3px 3px 0px white;
+    text-shadow: 2px 1px 0px black;
     white-space: nowrap;
+    
 
 }
 
@@ -169,8 +170,9 @@ section {
 
 .sobre .titulo2 {
     margin-top: 100px;
-    left: -100px;
+    left:20.5rem;
     display: flex;
+    position: relative;
 
 }
 
