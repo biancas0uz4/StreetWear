@@ -184,6 +184,7 @@ body {
     align-items: center;
     flex-wrap: wrap;
     margin-left: 43%;
+    cursor: pointer;
 }
 
 .slider .imagens li{
@@ -237,4 +238,8 @@ body {
     height: 420px;
     overflow: hidden;
     z-index: 2;
+}
+
+.card span {
+    margin-top: 3vh;
 }
