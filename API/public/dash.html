@@ -44,7 +44,7 @@
       <canvas id="myChart"></canvas>
       <div id="kpi_box">
         <div id="kpi_value"></div>
-        <div id="kpi_title">Total de votos do usuário</div>
+        <div id="kpi_title">Total de votos de <span id="p_usuario"></span></div>
       </div>
     </div>
 
@@ -56,7 +56,8 @@
 
     <script>
       b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
-
+      p_usuario.innerHTML = sessionStorage.NOME_USUARIO;
+      
       document.addEventListener("DOMContentLoaded", function () {
         const ctx = document.getElementById('myChart').getContext('2d');
 
@@ -151,12 +152,14 @@
                     ticks: {
                       color: 'white'
                     },
-                    beginAtZero: true
+                    beginAtZero: true,
+                    display: false,
                   },
                   x: {
                     ticks: {
                       color: 'white'
-                    }
+                    },
+                    display: false,
                   }
                 },
                 plugins: {

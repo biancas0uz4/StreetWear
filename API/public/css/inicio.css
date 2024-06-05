@@ -351,6 +351,7 @@ section {
     background-color: #01294941;
     color: white;
     transform: rotateY(180deg);
+    
 }
 
 .cardM img {
@@ -379,7 +380,7 @@ section {
     text-align: center;
     width: 100%;
     margin: 0 auto;
-    padding: 20px 0;
+    padding: 15px 0;
 }
 
 .slider {
